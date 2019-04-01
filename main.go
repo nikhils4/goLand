@@ -3,6 +3,7 @@ package main
 import "fmt"
 import "math"
 import "time"
+//import "strings"
 
 
 func main() {
@@ -124,6 +125,34 @@ func main() {
 	/* use the function */
 	fmt.Println(getSquareRoot(9))
 
+	// to make var global just put ot outside main function
+	// and use it anywhere in the code
+
+
+	//%s for string
+	//%x for hex code of the string for each character
+
+	//len(string)  returns the length of thr string
+
+
+
+	// two ways of concatenating string
+
+
+
+	//fmt.Println(strings.Join("Hello ", "Nikhil"))
+
+	fmt.Println("Hello " + "world")
+
+
+	// Arrays
+
+	//var balance [10] float32
+	var index =  [2] int {1,2} // can leave the square bracket blank as well when don't know the exact size of the array
+	fmt.Println(index[1])
+
+	index[0] = 3.0
+
 }
 
 
@@ -167,7 +196,7 @@ func swap(x, y string) (string, string) {
 
 
 
-// function as a method
+// function as a method   ----------> important to unsderstand as a method
 
 ///* define a circle */
 //type Circle struct {
@@ -182,4 +211,48 @@ func swap(x, y string) (string, string) {
 //func main(){
 //	circle := Circle{x:0, y:0, radius:5}
 //	fmt.Printf("Circle area: %f", circle.area())
+//}
+
+
+
+//passing array as parameter to the function
+
+//func main() {
+//	/* an int array with 5 elements */
+//	var  balance = []int {1000, 2, 3, 17, 50}
+//	var avg float32
+//
+//	/* pass array as an argument */
+//	avg = getAverage( balance, 5 ) ;
+//
+//	/* output the returned value */
+//	fmt.Printf( "Average value is: %f ", avg );
+//}
+//func getAverage(arr []int, size int) float32 {
+//	var i,sum int
+//	var avg float32
+//
+//	for i = 0; i < size;i++ {
+//		sum += arr[i]
+//	}
+//
+//	avg = float32(sum / size)
+//	return avg;
+//}
+
+
+
+// multidimensional array
+//
+//func main() {
+//	/* an array with 5 rows and 2 columns*/
+//	var a = [5][2]int{ {0,0}, {1,2}, {2,4}, {3,6},{4,8}}
+//	var i, j int
+//
+//	/* output each array element's value */
+//	for  i = 0; i < 5; i++ {
+//		for j = 0; j < 2; j++ {
+//			fmt.Printf("a[%d][%d] = %d\n", i,j, a[i][j] )
+//		}
+//	}
 //}
