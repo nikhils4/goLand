@@ -153,6 +153,18 @@ func main() {
 
 	index[0] = 3.0
 
+	// pointers are var that are used to store any var address
+	// to know the address of any var use & operator but keep in mind that this particular address can only be stored in pointers
+
+	var addOfVar int = 22
+
+	var ip *int /* points to an integer float */
+	ip  = &addOfVar
+
+	// to get the vakue of ip i.e. what exactly it has stored go with *ip
+
+	fmt.Println(*ip)
+
 }
 
 
@@ -256,3 +268,92 @@ func swap(x, y string) (string, string) {
 //		}
 //	}
 //}
+
+
+
+// all about pointers -----> executed inside the main function
+
+
+//// pointers are var that are used to store any var address
+//// to know the address of any var use & operator but keep in mind that this particular address can only be stored in pointers
+//
+//var addOfVar int = 22
+//
+//var ip *int /* points to an integer float */
+//ip  = &addOfVar
+//
+//// to get the vakue of ip i.e. what exactly it has stored go with *ip
+//
+//fmt.Println(ip)
+
+
+// nil pointers are the pointers those are declared but not are initialised with address of any variable
+// such state leads to nil pointer -----> ptr == nil
+//
+//func main() {
+//	a := []int{10,100,200}
+//	var i int
+//	var ptr [MAX]*int;
+//
+//	for  i = 0; i < MAX; i++ {
+//		ptr[i] = &a[i] /* assign the address of integer. */
+//	}
+//	for  i = 0; i < MAX; i++ {
+//		fmt.Printf("Value of a[%d] = %d\n", i,*ptr[i] )
+//	}
+//}
+
+//here the ptr is an array of pointers which contain the adsress of all the elements of another array
+
+
+// variable that is a pointer to a pointer should be declared as such  **addrOfPtr
+
+//func main() {
+//	var a int
+//	var ptr *int
+//	var pptr **int
+//
+//	a = 3000
+//
+//	/* take the address of var */
+//	ptr = &a
+//
+//	/* take the address of ptr using address of operator & */
+//	pptr = &ptr
+//
+//	/* take the value using pptr */
+//	fmt.Printf("Value of a = %d\n", a )
+//	fmt.Printf("Value available at *ptr = %d\n", *ptr )
+//	fmt.Printf("Value available at **pptr = %d\n", **pptr)
+//}
+
+
+//passing pointers to the function in GO
+
+//func main() {
+//	/* local variable definition */
+//	var a int = 100
+//	var b int = 200
+//
+//	fmt.Printf("Before swap, value of a : %d\n", a )
+//	fmt.Printf("Before swap, value of b : %d\n", b )
+//
+//	/* calling a function to swap the values.
+//	 * &a indicates pointer to a ie. address of variable a and
+//	 * &b indicates pointer to b ie. address of variable b.
+//	 */
+//	swap(&a, &b);
+//
+//	fmt.Printf("After swap, value of a : %d\n", a )
+//	fmt.Printf("After swap, value of b : %d\n", b )
+//}
+//func swap(x *int, y *int) {
+//	var temp int
+//	temp = *x    /* save the value at address x */
+//	*x = *y      /* put y into x */
+//	*y = temp    /* put temp into y */
+//}
+
+
+// in arrays in go you cannot hold data items of different data type for that we need struct
+
