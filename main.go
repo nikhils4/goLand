@@ -165,6 +165,15 @@ func main() {
 
 	fmt.Println(*ip)
 
+
+	var nikhil student
+
+	nikhil.name = "Nikhil Singh"
+	nikhil.registerNumber = "17BIT0192"
+
+	fmt.Println(nikhil.name)
+	fmt.Println(&nikhil)
+
 }
 
 
@@ -357,3 +366,239 @@ func swap(x, y string) (string, string) {
 
 // in arrays in go you cannot hold data items of different data type for that we need struct
 
+
+// struct
+
+//type struct_variable_type struct {
+//	member definition;
+//	member definition;
+//	...
+//	member definition;
+//}
+
+type student struct {
+	name string
+	registerNumber string
+}
+//
+//func main () {
+//	var nikhil student
+//
+//	nikhil.name = "Nikhil Singh"
+//	nikhil.registerNumber = "17BIT0192"
+//
+//	fmt.Println(nikhil.name)
+//	fmt.Println(&nikhil)
+//}
+
+// struct as function arguments
+
+//func someFunc ( hi student) {
+//	// some code here
+//
+//	// here the struct would be reffered as hi
+//}
+
+//var struct_pointer *Books
+//struct_pointer = &Book1
+//struct_pointer.title
+
+
+//func some (hello *student) {
+// hello.name to access inside the function
+// using pointer to structure inside the code
+//}
+
+// len() and cap() of a slice ----> length and capacity of a slice
+//
+//func main() {
+//	/* create a slice */
+//	numbers := []int{0,1,2,3,4,5,6,7,8}
+//	printSlice(numbers)
+//
+//	/* print the original slice */
+//	fmt.Println("numbers ==", numbers)
+//
+//	/* print the sub slice starting from index 1(included) to index 4(excluded)*/
+//	fmt.Println("numbers[1:4] ==", numbers[1:4])
+//
+//	/* missing lower bound implies 0*/
+//	fmt.Println("numbers[:3] ==", numbers[:3])
+//
+//	/* missing upper bound implies len(s)*/
+//	fmt.Println("numbers[4:] ==", numbers[4:])
+//
+//	numbers1 := make([]int,0,5)
+//	printSlice(numbers1)
+//
+//	/* print the sub slice starting from index 0(included) to index 2(excluded) */
+//	number2 := numbers[:2]
+//	printSlice(number2)
+//
+//	/* print the sub slice starting from index 2(included) to index 5(excluded) */
+//	number3 := numbers[2:5]
+//	printSlice(number3)
+//
+//}
+//func printSlice(x []int){
+//	fmt.Printf("len = %d cap = %d slice = %v\n", len(x), cap(x),x)
+
+//for integer place holder %d and for array we use %v
+
+// cannot change the size of array so slice is used most frequently using which we can make array of variable lenght
+
+
+//func main() {
+//	var numbers []int
+//	printSlice(numbers)
+//
+//	/* append allows nil slice */
+//	numbers = append(numbers, 0)
+//	printSlice(numbers)
+//
+//	/* add one element to slice*/
+//	numbers = append(numbers, 1)
+//	printSlice(numbers)
+//
+//	/* add more than one element at a time*/
+//	numbers = append(numbers, 2,3,4)
+//	printSlice(numbers)
+//
+//	/* create a slice numbers1 with double the capacity of earlier slice*/
+//	numbers1 := make([]int, len(numbers), (cap(numbers))*2)
+//
+//	/* copy content of numbers to numbers1 */
+//	copy(numbers1,numbers)
+//	printSlice(numbers1)
+//}
+//func printSlice(x []int){
+//	fmt.Printf("len=%d cap=%d slice=%v\n",len(x),cap(x),x)
+//}
+
+// range and key-value pair all declartion and iteration
+
+//func main() {
+//	/* create a slice */
+//	numbers := []int{0,1,2,3,4,5,6,7,8}
+//
+//	/* print the numbers */
+//	for i:= range numbers {
+//		fmt.Println("Slice item",i,"is",numbers[i])
+//	}
+//
+//	/* create a map*/
+//	countryCapitalMap := map[string] string {"France":"Paris","Italy":"Rome","Japan":"Tokyo"}
+//
+//	/* print map using keys*/
+//	for country := range countryCapitalMap {
+//		fmt.Println("Capital of",country,"is",countryCapitalMap[country])
+//	}
+//
+//	/* print map using key-value*/
+//	for country,capital := range countryCapitalMap {
+//		fmt.Println("Capital of",country,"is",capital)
+//	}
+//}
+
+// slicing to array
+// mapping to key-value pair
+
+// deleting a key-value pair
+//    /* delete an entry */
+//   delete(countryCapitalMap,"France");
+//   fmt.Println("Entry for France is deleted")
+
+// even while deleting a key-value pair use key to identify a particular key-value pair
+// and get that deleted using the above syntax
+
+
+// recursion
+
+//func fibonaci(i int) (ret int) {
+//	if i == 0 {
+//		return 0
+//	}
+//	if i == 1 {
+//		return 1
+//	}
+//	return fibonaci(i-1) + fibonaci(i-2)
+//}
+//func main() {
+//	var i int
+//	for i = 0; i < 10; i++ {
+//		fmt.Printf("%d ", fibonaci(i))
+//	}
+//}
+
+// type casting ------> int(someVariable)
+
+
+
+//interfaces represent set of method signatures
+
+//The struct data type implements these interfaces to have method definitions for the method signature of the interfaces.
+
+///* define an interface */
+//type Shape interface {
+//	area() float64
+//}
+//
+///* define a circle */
+//type Circle struct {
+//	x,y,radius float64
+//}
+//
+///* define a rectangle */
+//type Rectangle struct {
+//	width, height float64
+//}
+//
+///* define a method for circle (implementation of Shape.area())*/
+//func(circle Circle) area() float64 {
+//	return math.Pi * circle.radius * circle.radius
+//}
+//
+///* define a method for rectangle (implementation of Shape.area())*/
+//func(rect Rectangle) area() float64 {
+//	return rect.width * rect.height
+//}
+//
+///* define a method for shape */
+//func getArea(shape Shape) float64 {
+//	return shape.area()
+//}
+//
+//func main() {
+//	circle := Circle{x:0,y:0,radius:5}
+//	rectangle := Rectangle {width:10, height:5}
+//
+//	fmt.Printf("Circle area: %f\n",getArea(circle))
+//	fmt.Printf("Rectangle area: %f\n",getArea(rectangle))
+//}
+
+
+// error handling
+
+//func Sqrt(value float64)(float64, error) {
+//	if(value < 0){
+//		return 0, errors.New("Math: negative number passed to Sqrt")
+//	}
+//	return math.Sqrt(value), nil
+//}
+//func main() {
+//	result, err:= Sqrt(-1)
+//
+//	if err != nil {
+//		fmt.Println(err)
+//	} else {
+//		fmt.Println(result)
+//	}
+//
+//	result, err = Sqrt(9)
+//
+//	if err != nil {
+//		fmt.Println(err)
+//	} else {
+//		fmt.Println(result)
+//	}
+//}

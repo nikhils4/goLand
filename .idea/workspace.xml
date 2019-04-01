@@ -15,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="310" selection-start-line="310" selection-start-column="2" selection-end-line="327" selection-end-column="3" />
+            <state relative-caret-position="154">
+              <caret line="581" selection-start-line="581" selection-start-column="2" selection-end-line="603" selection-end-column="3" />
               <folding>
                 <element signature="e#14#54#0" expanded="true" />
               </folding>
@@ -124,8 +124,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="310" selection-start-line="310" selection-start-column="2" selection-end-line="327" selection-end-column="3" />
+        <state relative-caret-position="154">
+          <caret line="581" selection-start-line="581" selection-start-column="2" selection-end-line="603" selection-end-column="3" />
           <folding>
             <element signature="e#14#54#0" expanded="true" />
           </folding>
